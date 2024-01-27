@@ -1,0 +1,25 @@
+<data:item xmlns:data="data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="data ../../xsd/alp.xsd" id="dm-low-power-implementation-mcxa153" type="demo" format="projectfile" versionSchema="1.0.0" name="low power implementation mcxa153">
+    <display_title>
+        How to implement low power on MCXA153
+    </display_title>
+    <overview>
+        <![CDATA[The low power implementation demo is used for power mode switch, wake up time measurement and low power current measurement on the FRDM-MCXA153 board.]]>
+    </overview>
+    <toolchains>
+        <toolchain name="mcux"></toolchain>
+    </toolchains>
+    <families>
+        <family name="mcx"></family>
+    </families>
+    <nxp_compatible_hw>
+        <hw id="FRDM-MCXA153"></hw>
+    </nxp_compatible_hw>
+    <peripherals>
+        <peripheral name="clocks"></peripheral>
+        <peripheral name="uart"></peripheral>
+    </peripherals>
+    <categories>
+        <category name="low_power"></category>
+        <category name="power_conversion"></category>
+    </categories>
+</data:item>

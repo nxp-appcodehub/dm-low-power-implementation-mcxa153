@@ -1,0 +1,22 @@
+NXP Software Content Register
+
+Package:                   dm-low-power-implementation-mcxa153
+Version:                   1.0
+Outgoing License:          BSD-3-Clause
+License File:              LICENSE
+Description and comments:  This is the source code for power mode switch, wake up time measurement and low power current measurement on the FRDM-MCXA153 board.
+Release Location:          https://github.com/nxp-appcodehub/dm-low-power-implementation-mcxa153
+Origin:                    NXP (BSD-3-Clause)
+                           cmsis - ARM (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/
+                             
+cmsis                      Name: CMSIS                                       
+                           Version: 5.8.0                                    
+                           Outgoing License: Apache License 2.0              
+                           License File: CMSIS/LICENSE.txt                  
+                           Format: source code                               
+                           Description and comments: Vendor-independent hardware          
+                           abstraction layer for microcontrollers that are   
+                           based on Arm Cortex processors, distributed by    
+                           ARM. cores 
+                           Release location：https://github.com/nxp-appcodehub/dm-low-power-implementation-mcxa153/tree/main/CMSIS/    
+                           Origin: ARM (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/  
