@@ -62,6 +62,15 @@ uint32_t SystemCoreClock = DEFAULT_SYSTEM_CLOCK;
 
 __attribute__ ((weak)) void SystemInit (void) {
 
+    /* Release ISO */
+    SPC0->SC |= SPC_SC_ISO_CLR_MASK;
+    MRCC0->MRCC_GLB_RST1_SET = 1UL << 8;
+    MRCC0->MRCC_GLB_CC1 = 1UL << 8;
+    /* sets direction of pin as output */
+    GPIO3->PDDR |= 0x40000000;
+    /* P3_30 output low */
+    GPIO3->PDOR &= ~0x40000000;
+
   SCB->CPACR |= ((3UL << 0*2) | (3UL << 1*2));    /* set CP0, CP1 Full Access in Secure mode (enable PowerQuad) */
 #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
   SCB_NS->CPACR |= ((3UL << 0*2) | (3UL << 1*2));    /* set CP0, CP1 Full Access in Normal mode (enable PowerQuad) */

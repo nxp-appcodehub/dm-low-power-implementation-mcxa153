@@ -30,39 +30,39 @@
         "Typical wake up", "Fast wake up", "Slow wake up"           \
     }
 
-#define APP_POWER_MODE_DESC                                                                                              \
-    {                                                                                                                    \
-        "Active: Core/System/Bus clock all ON.",                                                                         \
-        "Sleep: CPU clock is off, and the system clock and bus clock remain ON. ",                                       \
-        "Deep Sleep: Core/System/Bus clock are gated off. ",                                                             \
-        "Power Down: Core/System/Bus clock are gated off, CORE domain is in static state, Flash memory is powered off",  \
-        "Deep Power Down: The whole CORE domain is power gated."                                                         \
+#define APP_POWER_MODE_DESC                                                                                              			\
+    {                                                                                                                    			\
+        "Active: Core/System/Bus clock all ON.",                                                                         			\
+        "Sleep: CPU clock is off, and the system clock and bus clock remain ON. ",                                       			\
+        "Deep Sleep: Core/System/Bus clock are gated off. ",                                                             			\
+        "Power Down: Core/System/Bus clock are gated off, CORE domain is in static state, Flash memory is powered off",  			\
+        "Deep Power Down: The whole CORE domain is power gated."                                                         			\
     }
 
-#define APP_SLEEP_WAKE_DESC                                                                                              \
-    {                                                                                                                    \
-        "Sleep Typical wake up time: ~0.27us, Low Power current consumption: ~1.72mA",                                   \
-        "Sleep Fast wake up time: ~0.14us, Low Power current consumption: ~3.31mA",                                      \
-        "Sleep Slow wake up time: ~1.02us, Low Power current consumption: ~0.83mA"                                       \
+#define APP_SLEEP_WAKE_DESC                                                                                              			\
+    {                                                                                                                    			\
+        "Sleep Typical wake up time: ~0.27us, Power consumption: ~1.72mA",                                   						\
+        "Sleep Fast wake up time: ~0.14us, Power consumption: ~3.27mA",                                      						\
+        "Sleep Slow wake up time: ~1.04us, Power consumption: ~0.82mA"                                       						\
     }
 
-#define APP_DeepSleep_WAKE_DESC                                                                                          \
-    {                                                                                                                    \
-        "DeepSleep Typical wake up time: ~4.62us, Low Power current consumption: ~23.2uA",                               \
-        "DeepSleep Fast wake up time: ~2.66us, Low Power current consumption: ~993.1uA",                                 \
-        "DeepSleep Slow wake up time: ~11.94us, Low Power current consumption: ~23.2uA"                                  \
+#define APP_DeepSleep_WAKE_DESC                                                                                          			\
+    {                                                                                                                    			\
+        "DeepSleep Typical wake up time: ~7.52us(Production Sample), ~4.61us(Engineering Sample); Power consumption: ~22.1uA",   	\
+        "DeepSleep Fast wake up time: ~5.90us(Production Sample), ~2.65us(Engineering Sample); Power consumption: ~965.2uA",        \
+        "DeepSleep Slow wake up time: ~14.59us(Production Sample), ~11.98us(Engineering Sample); Power consumption: ~22.0uA"        \
     }
 
-#define APP_PowerDown_WAKE_DESC                                                                                          \
-    {                                                                                                                    \
-        "PowerDown Typical wake up time: ~10.07us, Low Power current consumption: ~6.8uA",                               \
-        "PowerDown Fast wake up time: ~4.49us, Low Power current consumption: ~218.2uA",                                 \
-        "PowerDown Slow wake up time: ~36.94us, Low Power current consumption: ~6.8uA"                                   \
+#define APP_PowerDown_WAKE_DESC                                                                                          			\
+    {                                                                                                                    			\
+        "PowerDown Typical wake up time: ~17.26us(Production Sample), ~13.99us(Engineering Sample); Power consumption: ~6.2uA",     \
+        "PowerDown Fast wake up time: ~7.79us(Production Sample), ~4.49us(Engineering Sample); Power consumption: ~202.8uA",        \
+        "PowerDown Slow wake up time: ~39.74us(Production Sample), ~36.89us(Engineering Sample); Power consumption: ~6.2uA"         \
     }
 
-#define APP_DeepPowerDown_WAKE_DESC                                                                                      \
-    {                                                                                                                    \
-        "DeepPowerDown Typical wake up time: ~2.97ms, Low Power current consumption: ~1.12uA"                            \
+#define APP_DeepPowerDown_WAKE_DESC                                                                                      			\
+    {                                                                                                                    			\
+        "DeepPowerDown Typical wake up time: ~2.35ms(Production Sample), ~2.76ms(Engineering Sample); Power consumption: ~1.1uA"    \
     }
 
 #define APP_CMC                         CMC
@@ -516,7 +516,7 @@ static void APP_SetPowerDownWakeUpMode(app_wakeup_mode_t targetWakeMode)
           case kAPP_TypicalWakeUp:
               /* Wake up delay for LDO recovery */
               SPC0->LPWKUP_DELAY &= ~SPC_LPWKUP_DELAY_LPWKUP_DELAY_MASK;
-              SPC0->LPWKUP_DELAY |= SPC_LPWKUP_DELAY_LPWKUP_DELAY(0x32);
+              SPC0->LPWKUP_DELAY |= SPC_LPWKUP_DELAY_LPWKUP_DELAY(0x5B);
               BOARD_BootClockFRO48M(kSPC_CoreLDO_MidDriveVoltage, kSPC_CoreLDO_NormalDriveStrength, 
                                     kSPC_CoreLDO_UnderDriveVoltage, kSPC_CoreLDO_LowDriveStrength);
               break;
