@@ -107,24 +107,26 @@ The low power implementation demo is used for power mode switch, wake up time me
 ## 4. Results<a name="step4"></a>
 The following wake up time and low power current are provided as a reference:
 
+>P represents production sample, E represents engineering sample.
+
 >The typical wake up time correspond to low power wake up time in the datasheet.
 
 >Temperature, measuring instrument and wake up source etc. can affect wake up time.
 
 >There is no special gate all peripherals clock, and DeepPowerDown mode retained all RAM, so the measured current will be a little different from the data in the datasheet.
 
-|power mode|wake up mode|wake up time|low power current|
-|--|--|--|--|
-|Sleep|Typical|0.27us|1.72mA|
-|Sleep|Fast|0.14us|3.31mA|
-|Sleep|Slow|1.02us|0.83mA|
-|DeepSleep|Typical|4.62us|23.2uA|
-|DeepSleep|Fast|2.66us|993.1uA|
-|DeepSleep|Slow|11.94us|23.2uA|
-|PowerDown|Typical|10.07us|6.8uA|
-|PowerDown|Fast|4.49us|218.2uA|
-|PowerDown|Slow|36.94us|6.8uA|
-|DeepPowerDown|Typical|2.97ms|1.12uA|
+|Power mode|Wake up mode|Wake up time(P)|Wake up time(E)|Power consumption(P & E)|
+|--|--|--|--|--|
+|Sleep|Typical|0.27us|0.27us|1.72mA|
+|Sleep|Fast|0.14us|0.14us|3.27mA|
+|Sleep|Slow|1.04us|1.04us|0.82mA|
+|DeepSleep|Typical|7.52us|4.61us|22.1uA|
+|DeepSleep|Fast|5.90us|2.65us|965.2uA|
+|DeepSleep|Slow|14.59us|11.98us|22.0uA|
+|PowerDown|Typical|17.26us|13.99us|6.2uA|
+|PowerDown|Fast|7.79us|4.49us|202.8uA|
+|PowerDown|Slow|39.74us|36.89us|6.2uA|
+|DeepPowerDown|Typical|2.35ms|2.76ms|1.1uA|
 
 ## 5. FAQs<a name="step5"></a>
 *No FAQs have been identified for this project.*
